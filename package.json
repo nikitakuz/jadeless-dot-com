@@ -1,0 +1,16 @@
+{
+  "name": "jadeless-dot-com",
+  "version": "0.0.1",
+  "description": "Jadeless.com running on NodeJS and hosted on Google Cloud",
+  "repository": "https://github.com/nikitakuz/jadeless-dot-com",
+  "private": false,
+  "scripts": {
+    "start": "node app.js",
+    "monitor": "nodemon app.js",
+    "deploy": "gcloud preview app deploy app.yaml"
+  },
+  "author": "Nikita Kuznetsov <skateaddict@gmail.com>",
+  "dependencies": {
+    "express": "^4.12.0"
+  }
+}
