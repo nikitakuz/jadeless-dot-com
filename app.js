@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.status(200).send('Hello, google cloud!');
+  res.status(200).send('Hello, heroku!');
 });
 
 /* Include the app engine handlers to respond to start, stop, and health checks. */
