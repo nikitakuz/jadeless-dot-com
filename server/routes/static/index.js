@@ -22,7 +22,7 @@ module.exports = {
       }
 
       if (fs.statSync(filename).isDirectory()) {
-        // If no trailing slash and uri is not a file, redirect to trailing slash.
+        // If uri is a directory and has no trailing slash, redirect to trailing slash equivalent.
         if (uri.substr(-1) !== '/') {
           response.writeHead(301, { Location: uri + '/' } );
           response.end();
