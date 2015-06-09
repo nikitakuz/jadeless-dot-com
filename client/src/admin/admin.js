@@ -30,20 +30,28 @@
                 return FBREF.getAuth();
               }]
             },
-            controller: ['$firebase', 'FBREF', 'auth',
-              function  ( $firebase,   FBREF,   auth) {
-                if (!auth) {
-                  FBREF.authWithOAuthPopup('google', function(error, authData) {
-                    if (error && error.code === 'TRANSPORT_UNAVAILABLE') {
-                      sessionStorage.authenticatingWithRedirect = true;
-                      FBREF.authWithOAuthRedirect(provider, function(error) {
-                        onComplete(error, null);
-                      });
-                    } else {
-                      onComplete(error, authData);
+            controller: ['$scope', '$timeout', '$firebase', 'FBREF',
+              function  ( $scope,   $timeout,   $firebase,  FBREF) {
+                $scope.auth = FBREF.getAuth();
+
+                FBREF.onAuth(function(auth) {
+                  $scope.auth = auth;
+                  $timeout(function() {
+                    $scope.$digest();
+                  });
+                });
+
+                $scope.login = function() {
+                  $firebase.authWithProvider('google', function(error, auth) {
+                    if (error) {
+                      alert(error);
                     }
                   });
-                }
+                };
+
+                $scope.logout = function() {
+                  FBREF.unauth();
+                };
               }
             ]
           }
@@ -58,14 +66,10 @@
         $stateProvider.state('admin.index',
           {
             url: '/',
-            template: 'now = {{ now }}<br>auth = {{ auth }}<br><a ng-click="logout()">Logout</a>',
-            controller: ['$rootScope', '$scope', 'FBREF',
-              function  ( $rootScope,   $scope,   FBREF) {
+            templateUrl: '/admin/admin.html',
+            controller: ['$rootScope', '$scope', '$timeout', 'FBREF',
+              function  ( $rootScope,   $scope,   $timeout,   FBREF) {
                 $scope.now = new Date();
-                $scope.auth = FBREF.getAuth();
-                $scope.logout = function() {
-                  FBREF.unauth();
-                };
               }
             ]
           }

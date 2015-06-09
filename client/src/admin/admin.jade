@@ -1,0 +1,6 @@
+.login(ng-if="!auth")
+  a(ng-click="login()")
+    | Login
+.logout(ng-if="auth")
+  a(ng-click="logout()")
+   | Logout

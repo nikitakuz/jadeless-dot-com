@@ -20,11 +20,10 @@
                 deferredInit = $q.defer();
                 FBREF = new Firebase(url);
                 FBREF.onAuth(onAuthHandler);
-                FBREF.authWithProvider = authWithProvider;
                 return deferredInit.promise;
               };
 
-              function authWithProvider(provider, onComplete) {
+              $delegate.authWithProvider = function(provider, onComplete) {
                 if (['facebook', 'google'].indexOf(provider) === -1) {
                   onComplete('Error: Invalid auth provider.', null);
                   return;
@@ -39,7 +38,7 @@
                     onComplete(error, authData);
                   }
                 });
-              }
+              };
 
               return $delegate;
             }
