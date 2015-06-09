@@ -5,6 +5,9 @@
 @admin_header_background: #ffffff;
 @admin_section_background: #ffffff;
 
+@label_width: 5em;
+@input_margin_left: 0.5em;
+
 body.admin {
   background-color: @admin_background;
   color: #222222;
@@ -59,6 +62,24 @@ body.admin {
       border-radius: 3px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       background: @admin_section_background;
+
+      .input-wrapper {
+        padding: 0.25em 0;
+      }
+
+      label {
+        display: inline-block;
+        width: @label_width;
+        text-align: right;
+      }
+
+      input {
+        margin-left: @input_margin_left;
+      }
+
+      button.save-changes {
+        margin-left: @label_width + @input_margin_left;
+      }
     }
   }
 }
