@@ -1,6 +1,8 @@
 @nav_width: 12em;
 @nav_text_color: #d0d8f0;
 
+@admin_header_background: #ffffff;
+
 body.admin {
   background-color: #dddddd;
   color: #222222;
@@ -29,7 +31,24 @@ body.admin {
     padding: 0.5em 1em;
   }
 
-  #content {
+  header, #content {
     padding-left: @nav_width;
+  }
+
+  header {
+    background: @admin_header_background;
+
+    h1 {
+      margin: 0;
+      padding: 0.5em 0.5em 0.25em 0.5em;
+      font-size: 1em;
+    }
+
+    .state-icon,
+    .state-title {
+      display: inline-block;
+      font-size: 1.5em;
+      padding: 0 0.25em;
+    }
   }
 }

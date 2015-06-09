@@ -14,5 +14,9 @@ nav
       a(ng-if="auth", ng-click="logout()")
        | Logout
 #wrapper
+  header
+    h1
+      .state-icon(ng-class="$state.current.icon")
+      .state-title(ng-bind="$state.current.title")
   #content
     ui-view

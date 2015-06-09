@@ -7,8 +7,9 @@
   ]);
 
   admin.run(
-    [         '$rootScope',
-      function($rootScope) {
+    [         '$rootScope', '$state',
+      function($rootScope,   $state) {
+        $rootScope.$state = $state;
       }
     ]
   );
