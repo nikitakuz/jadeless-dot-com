@@ -1,0 +1,9 @@
+.input-wrapper
+  label(for="homepage-h1")
+    | H1
+  input#homepage-h1(type="text", ng-model="homepage.h1")
+.input-wrapper
+  button(ng-if="auth.uid === 'google:106068825523283570806'", ng-click="saveChanges()")
+    | Save Changes
+  button(ng-if="auth.uid !== 'google:106068825523283570806'", disabled="true", title="Only admin can save changes")
+    | Save Changes

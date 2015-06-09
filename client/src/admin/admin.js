@@ -2,7 +2,8 @@
   var admin = angular.module('jadeless.admin', [
     'ui.router',
     'firebase',
-    'jadeless.firebaseDecorator'
+    'jadeless.firebaseDecorator',
+    'jadeless.admin.homepage'
   ]);
 
   admin.run(
@@ -20,7 +21,7 @@
         $stateProvider.state('admin',
           {
             abstract: true,
-            template: '<ui-view/>',
+            templateUrl: '/admin/admin.html',
             resolve: {
               FBREF: ['$firebase', function($firebase) {
                 var url = 'https://jadeless-dot-com.firebaseio.com/';
@@ -52,24 +53,6 @@
                 $scope.logout = function() {
                   FBREF.unauth();
                 };
-              }
-            ]
-          }
-        );
-      }
-    ]
-  );
-
-  admin.config(
-    [         '$stateProvider',
-      function($stateProvider) {
-        $stateProvider.state('admin.index',
-          {
-            url: '/',
-            templateUrl: '/admin/admin.html',
-            controller: ['$rootScope', '$scope', '$timeout', 'FBREF',
-              function  ( $rootScope,   $scope,   $timeout,   FBREF) {
-                $scope.now = new Date();
               }
             ]
           }

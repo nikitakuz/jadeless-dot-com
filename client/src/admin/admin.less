@@ -1,0 +1,40 @@
+@nav_width: 12em;
+@nav_text_color: #d0d8f0;
+
+body.admin {
+  background-color: #dddddd;
+  color: #222222;
+
+  nav {
+    position: fixed; top: 0; left: 0; bottom: 0; width: @nav_width;
+    background-color: #20262c;
+    color: @nav_text_color;
+
+    a {
+      color: @nav_text_color;
+      text-decoration: none;
+    }
+  }
+
+  .nav-header {
+    padding: 0.5em 1em;
+
+    h4 {
+      margin: 0.5em 0 0 0;
+    }
+  }
+
+  ol.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li.nav-item {
+    padding: 0.5em 1em;
+  }
+
+  #content {
+    padding-left: @nav_width;
+  }
+}

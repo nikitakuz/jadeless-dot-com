@@ -1,6 +1,16 @@
-.login(ng-if="!auth")
-  a(ng-click="login()")
-    | Login
-.logout(ng-if="auth")
-  a(ng-click="logout()")
-   | Logout
+nav
+  .nav-header
+    h4
+      | Jadeless Admin
+  ol.nav-list
+    li.nav-item.auth
+      a(ui-sref="admin.homepage")
+        | Home page
+    li.nav-item.auth
+      a(ng-if="!auth", ng-click="login()")
+        | Login
+      a(ng-if="auth", ng-click="logout()")
+       | Logout
+#wrapper
+  #content
+    ui-view

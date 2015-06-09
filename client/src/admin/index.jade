@@ -5,8 +5,12 @@ block append scripts
   script(src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js")
   script(src="https://cdn.firebase.com/js/client/2.2.1/firebase.js")
   script(src="https://cdn.firebase.com/libs/angularfire/1.1.1/angularfire.min.js")
-  script(src="/admin/admin.js")
   script(src="/firebase/firebaseDecorator.js")
+  script(src="/admin/admin.js")
+  script(src="/admin/homepage/homepage.js")
+
+block append stylesheets
+  link(rel="stylesheet", href="/admin/admin.css")
 
 block body
   body.admin(ng-app="jadeless.admin")
