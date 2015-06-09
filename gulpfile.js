@@ -9,9 +9,9 @@ var VENDOR = SRC + 'vendor/';
 var DIST = './client/dist/';
 
 var paths = {
-  jade: [SRC + '**/*.jade', '!' + VENDOR],
-  less: [SRC + '**/*.less', '!' + VENDOR],
-  scripts: [SRC + '**/*.js', '!' + VENDOR]
+  jade: [SRC + '**/*.jade', '!' + VENDOR + '**/*.jade'],
+  less: [SRC + '**/*.less', '!' + VENDOR + '**/*.less'],
+  scripts: [SRC + '**/*.js', '!' + VENDOR + '**/*.js']
 };
 
 gulp.task('jade', function() {
@@ -37,11 +37,12 @@ gulp.task('scripts', ['lint'], function() {
     .pipe(gulp.dest(DIST))
 });
 
-gulp.task('build', ['jade', 'less']);
+gulp.task('build', ['jade', 'less', 'scripts']);
 
 gulp.task('watch', ['build'], function() {
   gulp.watch(paths.jade, ['jade']);
   gulp.watch(paths.less, ['less']);
+  gulp.watch(paths.scripts, ['scripts']);
 });
 
 gulp.task('default', ['watch']);
