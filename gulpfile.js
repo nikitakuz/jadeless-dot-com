@@ -11,7 +11,8 @@ var DIST = './client/dist/';
 var paths = {
   jade: [SRC + '**/*.jade', '!' + VENDOR + '**/*.jade'],
   less: [SRC + '**/*.less', '!' + VENDOR + '**/*.less'],
-  scripts: [SRC + '**/*.js', '!' + VENDOR + '**/*.js']
+  scripts: [SRC + '**/*.js', '!' + VENDOR + '**/*.js'],
+  fonts: [SRC + 'fonts/**/*.*']
 };
 
 gulp.task('jade', function() {
@@ -39,7 +40,12 @@ gulp.task('scripts', ['lint'], function() {
     .pipe(gulp.dest(DIST))
 });
 
-gulp.task('build', ['jade', 'less', 'scripts']);
+gulp.task('fonts', function() {
+  return gulp.src(paths.fonts)
+    .pipe(gulp.dest(DIST + '/fonts'))
+});
+
+gulp.task('build', ['jade', 'less', 'scripts', 'fonts']);
 
 gulp.task('watch', ['build'], function() {
   gulp.watch(paths.jade, ['jade']);
