@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var jade = require('gulp-jade');
 var less = require('gulp-less');
 var jshint = require('gulp-jshint');
-
+var locals = require('./test/locals');
 
 var SRC = './client/src/';
 var VENDOR = SRC + 'vendor/';
@@ -16,7 +16,9 @@ var paths = {
 
 gulp.task('jade', function() {
   return gulp.src(paths.jade)
-    .pipe(jade())
+    .pipe(jade({
+      locals: locals
+    }))
     .pipe(gulp.dest(DIST));
 });
 
