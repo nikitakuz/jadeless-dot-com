@@ -5,7 +5,10 @@
   "repository": "https://github.com/nikitakuz/jadeless-dot-com",
   "private": false,
   "author": "Nikita Kuznetsov <skateaddict@gmail.com>",
-  "devDependencies": {
+  "scripts": {
+    "postinstall": "gulp build"
+  },
+  "dependencies": {
     "gulp": "^3.9.0",
     "gulp-jade": "^1.0.1"
   }
