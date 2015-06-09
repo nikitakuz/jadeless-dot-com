@@ -5,7 +5,8 @@
   "repository": "https://github.com/nikitakuz/jadeless-dot-com",
   "private": false,
   "author": "Nikita Kuznetsov <skateaddict@gmail.com>",
-  "dependencies": {
-    "express": "^4.12.0"
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jade": "^1.0.1"
   }
 }
