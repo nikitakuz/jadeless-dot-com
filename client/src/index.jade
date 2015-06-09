@@ -1,17 +1,21 @@
 html
-  head
-    link(rel="stylesheet", href="style.css")
-    script(src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js")
-    script.
-      WebFont.load({
-        google: {
-          families: ['Ubuntu']
-        }
-      });
-  body.index
-    section.first
-      .gutter
-      .content
-        h2
-          | Hello, Heroku!
-      .gutter
+  block head
+    head
+      block stylesheets
+        link(rel="stylesheet", href="style.css")
+      block scripts
+        script(src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js")
+        script.
+          WebFont.load({
+            google: {
+              families: ['Ubuntu']
+            }
+          });
+  block body
+    body.index
+      section.first
+        .gutter
+        .content
+          h2
+            | Hello, Heroku!
+        .gutter
