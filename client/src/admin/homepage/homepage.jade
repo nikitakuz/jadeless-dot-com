@@ -4,7 +4,11 @@ section.homepage
       | H1
     input#homepage-h1(type="text", ng-model="homepage.h1")
   .input-wrapper
-    button(ng-if="auth.uid === 'google:106068825523283570806'", ng-click="saveChanges()")
+    label(for="homepage-h2")
+      | H2
+    input#homepage-h2(type="text", ng-model="homepage.h2")
+  .input-wrapper
+    button.save-changes(ng-if="auth.uid === 'google:106068825523283570806'", ng-click="saveChanges()")
       | Save Changes
-    button(ng-if="auth.uid !== 'google:106068825523283570806'", disabled="true", title="Only admin can save changes")
+    button.save-changes(ng-if="auth.uid !== 'google:106068825523283570806'", disabled="true", title="Only admin can save changes")
       | Save Changes
