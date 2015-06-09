@@ -1,13 +1,7 @@
-var contentTypesByExtension = {
-  '.html': 'text/html',
-  '.css': 'text/css',
-  '.js': 'text/javascript'
-};
-
-
 var fs = require('fs');
 var url = require('url');
 var path = require('path');
+var mime = require('mime');
 
 module.exports = {
   render: function(uri, response) {
@@ -41,7 +35,7 @@ module.exports = {
         }
 
         var headers = {};
-        var contentType = contentTypesByExtension[path.extname(filename)];
+        var contentType = mime.lookup(path.extname(filename));
         if (contentType) headers['Content-Type'] = contentType;
         response.writeHead(200, headers);
         response.write(file, 'binary');
@@ -49,4 +43,4 @@ module.exports = {
       });
     });
   }
-}
+};
