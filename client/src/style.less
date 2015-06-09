@@ -5,6 +5,11 @@ body {
   color: #dddddd;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 section {
   .gutter, .content { display: inline-block; vertical-align: middle; }
   .gutter { width: 0; }
@@ -13,10 +18,15 @@ section {
 
 body.index {
   font-family: 'Ubuntu', sans-serif;
+
   section.first {
     .gutter { height: 100%; }
 
     .content { text-align: center; }
   }
+}
+
+.admin-link, .preview-link {
+  position: fixed; top: 0.5em; right: 0.5em;
 }
 

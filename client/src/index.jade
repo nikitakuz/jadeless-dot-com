@@ -3,9 +3,9 @@ html
     head
       block stylesheets
         link(rel="stylesheet", href="/style.css")
-        link(rel="stylesheet", href="/fonts/icomoon.css")
       block scripts
         script(src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js")
+      block fonts
         script.
           WebFont.load({
             google: {
@@ -26,8 +26,11 @@ html
             font-weight: normal;
             font-style: normal;
           }
+        link(rel = "stylesheet", href = "/fonts/icomoon.css")
   block body
     body.index
+      .admin-link
+        a.icon-cog(href="/admin/")
       section.first
         .gutter
         .content
