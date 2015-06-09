@@ -3,23 +3,24 @@ var jade = require('gulp-jade');
 var less = require('gulp-less');
 
 var SRC = './client/src/';
-var BUILD = './client/dist/';
+var VENDOR = SRC + 'vendor/';
+var DIST = './client/dist/';
 
 var paths = {
-  jade: SRC + '**/*.jade',
-  less: SRC + '**/*.less'
+  jade: [SRC + '**/*.jade', '!' + VENDOR],
+  less: [SRC + '**/*.less', '!' + VENDOR]
 };
 
 gulp.task('jade', function() {
   return gulp.src(paths.jade)
     .pipe(jade())
-    .pipe(gulp.dest(BUILD));
+    .pipe(gulp.dest(DIST));
 });
 
 gulp.task('less', function() {
   return gulp.src(paths.less)
     .pipe(less())
-    .pipe(gulp.dest(BUILD));
+    .pipe(gulp.dest(DIST));
 });
 
 gulp.task('build', ['jade', 'less']);
