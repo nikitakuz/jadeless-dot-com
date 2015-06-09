@@ -2,3 +2,20 @@ body {
   background-color: #222222;
   color: #dddddd;
 }
+
+section {
+  .gutter, .content { display: inline-block; vertical-align: middle; }
+  .gutter { width: 0; }
+  .content { width: 100%; }
+}
+
+body.index {
+  section.first {
+    .gutter {
+      height: 100%;
+    }
+
+    .content { text-align: center; }
+  }
+}
+
