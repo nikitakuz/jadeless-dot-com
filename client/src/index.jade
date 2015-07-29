@@ -9,7 +9,7 @@ html
         script.
           WebFont.load({
             google: {
-              families: ['Ubuntu']
+              families: ['Ubuntu:300,400', 'Source Code Pro']
             },
             custom: {
               families: ['icomoon'],
@@ -29,9 +29,140 @@ html
         link(rel = "stylesheet", href = "/fonts/icomoon.css")
   block body
     body.index
-      section.first
-        .gutter
+      header
+        h1.h2.logo
+          | Jadeless
+      nav.side-nav
+        //h1.h2.logo
+          | Jadeless
+        img(src="/images/calvin.png")
+        br
+        br
+        ul.links
+          li
+            a.h3(href="#about")
+              | About
+          li
+            a.h3(href="#tools")
+              | Tools
+          li
+            a.h3(href="#portfolio")
+              | Portfolio
+          li
+            a.h3(href="#hello")
+              | Hello
+      section#about
         .content
-          h1=homepage.h1
-          h2=homepage.h2
-        .gutter
+          .description.column
+            h2
+              | About Me
+            p
+              | My name is Nikita Kuznetsov and I love building web applications.
+              | I am passionate about adaptive user interface design and intuitive user experience design.
+            p
+              | Since I was a kid, I was destined to be an engineer. I played with LEGOs practically non-stop well past
+              | the acceptable age for a kid to still be playing with LEGOs.
+            p
+              | During my teenage years, I taught myself how to build websites using HTML and CSS, adding interactivity
+              | with Flash. Yes. Flash.
+            p
+              | After graduating university in 2010, I began building web applications professionally. I built
+              | drag-and-drop games for an educational startup, customer loyalty apps for a marketing startup, a highly
+              | dynamic consumer funnel for an energy startup, application performance tools for a big data
+              | startup, a multi-dimensional chat app for a communications startup, and a workout app for myself.
+
+      section#tools
+        .content
+          .description.column
+            h2
+              | Favorite Tools
+            p
+              | In the web application world, I think how you build is as important what you build.
+              | I've had the pleasure of working with a wide variety of tools over my years and
+              | below are some of my all time favorite tools.
+          .tool.column
+            .logo-wrapper
+              img(src="/images/AngularJS-Shield-medium.png")
+            p
+              | AngularJS - everything a web application engineer could ever desire of a framework.
+          .tool.column
+            .logo-wrapper
+              img(width="128px", src="/images/firebase-icon128.png")
+            p
+              | Firebase - an easy-to-use real-time JSON database with built-in authentication services.
+          .tool.column
+            .logo-wrapper
+              img(width="128px", src="/images/jade.png")
+            p
+              | Jade - a simple, succinct, powerful, and beautiful template language.
+          .tool.column
+            .logo-wrapper
+              img(width="128px", src="/images/less.jpeg")
+            p
+              | Less - simple stylesheets with all the necessities and less clutter.
+          .tool.column
+            .logo-wrapper
+              img(width="128px", src="/images/bootstrap.png")
+            p
+              | Bootstrap - well-designed, well-built, and easy-to-use components.
+          .tool.column
+            .logo-wrapper
+              img(width="128px", src="/images/gulp.png")
+            p
+              | Gulp - quickly perform complex build tasks with the power of node streams.
+      section#portfolio
+        .content
+          .column
+            h2
+              | Portfolio
+          .projects
+            .project.dialectica
+              .description.column
+                h3
+                  | Dialectica
+                p
+                  | Traditional digital communication is linear and doesn't account for logical connections between
+                  | individual statements. Dialectica is a way for people to communicate in a graphical format with the
+                  | ability to specify the intent of their statements in context and visualize the structure of their
+                  | conversations.
+              .screenshot.column
+                img(src="/images/dialectica-screenshot.jpg")
+              .link.column(style="width:100%;text-align:right;")
+                p
+                  | See more at&nbsp;
+                  a(href="bit.ly/ohbruhwhereartthou")
+                    | bit.ly/ohbruhwhereartthou
+            .project.undeadlifts
+              .description.column
+                h3
+                  | Undeadlifts
+                p
+                  | Unsatisfied with workout tracking apps on the market, I decided to build my own. Undeadlifts
+                  | features the ability to create custom routines, record and track progress, set rest intervals
+                  | between sets.
+              .screenshots.column.no-padding
+                .screenshot.column
+                  img(src="/images/undeadlifts-screenshot.jpg")
+                .screenshot.column
+                  img(src="/images/undeadlifts-screenshot-2.jpg")
+              .link.column(style="width:100%;text-align:right;")
+                p
+                  | See the app at&nbsp;
+                  a(href="undeadlifts.com")
+                    | undeadlifts.com
+
+      section#hello
+        .content
+          .column
+            h2
+              | Hello
+            p
+              | If you'd like to say hello, send me an email at&nbsp;
+              a(href="mailto:hello@jadeless.com?Subject=Hello!")
+                | hello@jadeless.com.
+            img(src="/images/sleeping.jpg")
+      section#copyright
+        .content
+          .column
+            p
+             | &copy; 2015 Nikita Kuznetsov. All rights surrendered.

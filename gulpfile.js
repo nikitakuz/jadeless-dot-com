@@ -12,7 +12,8 @@ var paths = {
   jade: [SRC + '**/*.jade', '!' + VENDOR + '**/*.jade'],
   less: [SRC + '**/*.less', '!' + VENDOR + '**/*.less'],
   scripts: [SRC + '**/*.js', '!' + VENDOR + '**/*.js'],
-  fonts: [SRC + 'fonts/**/*.*']
+  fonts: [SRC + 'fonts/**/*.*'],
+  images: [SRC + 'images/**/*.*']
 };
 
 gulp.task('jade', function() {
@@ -45,7 +46,12 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest(DIST + '/fonts'))
 });
 
-gulp.task('build', ['jade', 'less', 'scripts', 'fonts']);
+gulp.task('images', function() {
+  return gulp.src(paths.images)
+    .pipe(gulp.dest(DIST + '/images'))
+});
+
+gulp.task('build', ['jade', 'less', 'scripts', 'fonts', 'images']);
 
 gulp.task('watch', ['build'], function() {
   gulp.watch(paths.jade, ['jade']);
