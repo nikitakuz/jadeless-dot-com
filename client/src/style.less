@@ -5,6 +5,7 @@
 @large_breakpoint: 80em;
 @medium_breakpoint: 64em;
 @small_breakpoint: 48em;
+@xsmall_breakpoint: 30em;
 @hide_side_nav_breakpoint: 40em;
 
 @light_gray: #f0f0f0;
@@ -67,6 +68,7 @@ body {                       font-size: 22px;
   @media (max-width: @large_breakpoint) { font-size: 20px; }
   @media (max-width: @medium_breakpoint) { font-size: 18px; }
   @media (max-width: @small_breakpoint) { font-size: 16px; }
+  @media (max-width: @xsmall_breakpoint) { font-size: 15px; }
 }
 
 
@@ -112,7 +114,7 @@ body.index {
     .content {
       padding: 0 1em;
 
-      @media (max-width: @small_breakpoint) {
+      @media (max-width: @xsmall_breakpoint) {
         padding: 0;
       }
     }
@@ -155,7 +157,6 @@ body.index {
       }
 
       .logo-wrapper {
-//        .ghost-align();
         float: left;
         width: 96px;
         height: 96px;
@@ -164,7 +165,7 @@ body.index {
 
         @media(max-width: @small_breakpoint) {
           width: 64px;
-//          height: 64px;
+          height: 64px;
         }
 
         img {
