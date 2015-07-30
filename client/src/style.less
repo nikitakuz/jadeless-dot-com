@@ -9,6 +9,9 @@
 
 @light_gray: #f0f0f0;
 
+@link_color: #00bf99;
+@link_hover_color: #00e5a4;
+
 .ghost-align() {
   &:before {
     content: '';
@@ -23,11 +26,11 @@ body {
 }
 
 a {
-  color: #00bf99;
+  color: @link_color;
   text-decoration: none;
 
   &:hover {
-    color: #00e5a4;
+    color: @link_hover_color;
   }
 }
 
@@ -72,15 +75,19 @@ body.index {
   header {
     display: none;
     background: #fafafa;
+    text-align: center;
+    padding: 1em 1em 0;
+
+    border-bottom: 1px solid fadeout(@link_hover_color, 80%);
 
     @media (max-width: @hide_side_nav_breakpoint) {
       display: block;
     }
 
-    height: 4em;
-    padding: 0 1em;
+    img {
 
-    .ghost-align();
+    }
+
 
     .logo {
       display: inline-block;
