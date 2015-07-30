@@ -1,6 +1,7 @@
 html
   block head
     head
+      meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=no")
       block stylesheets
         link(rel="stylesheet", href="/style.css")
       block scripts
@@ -43,11 +44,11 @@ html
             a.h3(href="#about")
               | About
           li
+            a.h3(href="#portfolio")
+              | Work
+          li
             a.h3(href="#tools")
               | Tools
-          li
-            a.h3(href="#portfolio")
-              | Portfolio
           li
             a.h3(href="#hello")
               | Hello
@@ -58,7 +59,7 @@ html
               | About Me
             p
               | My name is Nikita Kuznetsov and I love building web applications.
-              | I am passionate about adaptive user interface design and intuitive user experience design.
+              | I am passionate about adaptive user interfaces and intuitive user experiences.
             p
               | Since I was a kid, I was destined to be an engineer. I played with LEGOs practically non-stop well past
               | the acceptable age for a kid to still be playing with LEGOs.
@@ -66,10 +67,57 @@ html
               | During my teenage years, I taught myself how to build websites using HTML and CSS, adding interactivity
               | with Flash. Yes. Flash.
             p
-              | After graduating university in 2010, I began building web applications professionally. I built
-              | drag-and-drop games for an educational startup, customer loyalty apps for a marketing startup, a highly
-              | dynamic consumer funnel for an energy startup, application performance tools for a big data
-              | startup, a multi-dimensional chat app for a communications startup, and a workout app for myself.
+              | After graduating university in 2010, I began building web applications professionally.
+              | I worked on drag-and-drop games for an educational startup,
+              | customer loyalty apps for a marketing startup,
+              | dynamic consumer funnels and dashboards for an energy startup,
+              | data application monitoring tools for a data startup,
+              | and a graphical chat app for a collaboration startup.
+
+      section#portfolio
+        .content
+          .column
+            h2
+              | Recent Work
+          .projects
+            .project.dialectica
+              .description.column
+                h3
+                  | Dialectica
+                p
+                  | Traditional digital communication is linear and doesn't account for logical connections between
+                  | individual statements. Dialectica is a way for people to communicate in a graphical format with the
+                  | ability to specify the intent of their statements in context and visualize the structure of their
+                  | conversations.
+              .screenshot.column
+                img(src="/images/dialectica-screenshot.jpg")
+              .link.column(style="width:100%;text-align:right;")
+                p
+                  | See more at&nbsp;
+                  a(href="http://bit.ly/ohbruhwhereartthou")
+                    | bit.ly/ohbruhwhereartthou
+            .project.undeadlifts
+              .description.column
+                h3
+                  | Undeadlifts
+                p
+                  | Unsatisfied with workout tracking apps on the market, I decided to build my own. Undeadlifts
+                  | features the ability to create custom routines, record and track progress, set rest intervals
+                  | between sets.
+              .screenshots.column.no-padding
+                .screenshot.column
+                  img(src="/images/undeadlifts-screenshot.jpg")
+                .screenshot.column
+                  img(src="/images/undeadlifts-screenshot-2.jpg")
+              .link.column(style="width:100%;text-align:right;")
+                p
+                  | See the app at&nbsp;
+                  a(href="http://undeadlifts.com")
+                    | undeadlifts.com
+            .project.coming-soon
+              .description.column
+                h3
+                  | More Coming Soon
 
       section#tools
         .content
@@ -110,47 +158,6 @@ html
               img(width="128px", src="/images/gulp.png")
             p
               | Gulp - quickly perform complex build tasks with the power of node streams.
-      section#portfolio
-        .content
-          .column
-            h2
-              | Portfolio
-          .projects
-            .project.dialectica
-              .description.column
-                h3
-                  | Dialectica
-                p
-                  | Traditional digital communication is linear and doesn't account for logical connections between
-                  | individual statements. Dialectica is a way for people to communicate in a graphical format with the
-                  | ability to specify the intent of their statements in context and visualize the structure of their
-                  | conversations.
-              .screenshot.column
-                img(src="/images/dialectica-screenshot.jpg")
-              .link.column(style="width:100%;text-align:right;")
-                p
-                  | See more at&nbsp;
-                  a(href="http://bit.ly/ohbruhwhereartthou")
-                    | bit.ly/ohbruhwhereartthou
-            .project.undeadlifts
-              .description.column
-                h3
-                  | Undeadlifts
-                p
-                  | Unsatisfied with workout tracking apps on the market, I decided to build my own. Undeadlifts
-                  | features the ability to create custom routines, record and track progress, set rest intervals
-                  | between sets.
-              .screenshots.column.no-padding
-                .screenshot.column
-                  img(src="/images/undeadlifts-screenshot.jpg")
-                .screenshot.column
-                  img(src="/images/undeadlifts-screenshot-2.jpg")
-              .link.column(style="width:100%;text-align:right;")
-                p
-                  | See the app at&nbsp;
-                  a(href="http://undeadlifts.com")
-                    | undeadlifts.com
-
       section#hello
         .content
           .column
