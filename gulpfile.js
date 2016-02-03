@@ -51,7 +51,12 @@ gulp.task('images', function() {
     .pipe(gulp.dest(DIST + '/images'))
 });
 
-gulp.task('build', ['jade', 'less', 'scripts', 'fonts', 'images']);
+gulp.task('google-verification', function() {
+  return gulp.src(SRC + 'googled5ddfe70dfcb5013.html')
+      .pipe(gulp.dest(DIST))
+});
+
+gulp.task('build', ['jade', 'less', 'scripts', 'fonts', 'images', 'google-verification']);
 
 gulp.task('watch', ['build'], function() {
   gulp.watch(paths.jade, ['jade']);
