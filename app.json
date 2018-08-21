@@ -1,5 +1,6 @@
 {
   "name": "jadeless-dot-com",
+  "stack": "heroku-16",
   "scripts": {
   },
   "env": {
