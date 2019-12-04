@@ -6,6 +6,7 @@
   "private": false,
   "author": "Nikita Kuznetsov <skateaddict@gmail.com>",
   "scripts": {
+    "start": "node server.js",
     "postinstall": "gulp build"
   },
   "dependencies": {
