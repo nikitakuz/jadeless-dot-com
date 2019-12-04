@@ -5,6 +5,9 @@
   "repository": "https://github.com/nikitakuz/jadeless-dot-com",
   "private": false,
   "author": "Nikita Kuznetsov <skateaddict@gmail.com>",
+  "engines": {
+    "node": "12.13.x"
+  },
   "scripts": {
     "start": "node server.js",
     "postinstall": "gulp build"
