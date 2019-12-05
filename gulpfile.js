@@ -36,10 +36,10 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('scripts', ['lint'], function() {
+gulp.task('scripts', gulp.series('lint', function() {
   return gulp.src(paths.scripts)
     .pipe(gulp.dest(DIST))
-});
+}));
 
 gulp.task('fonts', function() {
   return gulp.src(paths.fonts)
@@ -56,12 +56,12 @@ gulp.task('google-verification', function() {
       .pipe(gulp.dest(DIST))
 });
 
-gulp.task('build', ['jade', 'less', 'scripts', 'fonts', 'images', 'google-verification']);
+gulp.task('build', gulp.series('jade', 'less', 'scripts', 'fonts', 'images', 'google-verification'));
 
-gulp.task('watch', ['build'], function() {
+gulp.task('watch', gulp.series('build', function() {
   gulp.watch(paths.jade, ['jade']);
   gulp.watch(paths.less, ['less']);
   gulp.watch(paths.scripts, ['scripts']);
-});
+}));
 
-gulp.task('default', ['watch']);
+gulp.task('default', gulp.series('watch'));
